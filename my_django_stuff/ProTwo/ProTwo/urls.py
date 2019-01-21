@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from AppTwo import views
+from django.conf.urls import include
+
 
 urlpatterns = [
     path('v1/apptwo', views.html_content, name='html_content'),
+    path('he/', include('AppTwo.urls')),
     path('admin/', admin.site.urls),
 ]
